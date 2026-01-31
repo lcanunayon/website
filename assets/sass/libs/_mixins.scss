@@ -74,5 +74,3 @@
 	$svg: str-replace($svg, ';', '%3B');
 
 	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
-
-}
