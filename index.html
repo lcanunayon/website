@@ -14,6 +14,112 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			/* ── Intro Section ── */
+			.intro-profile {
+				display: flex;
+				align-items: center;
+				gap: 1.5rem;
+				margin-bottom: 2rem;
+			}
+			.intro-avatar {
+				flex-shrink: 0;
+			}
+			.intro-avatar img {
+				width: 110px;
+				height: 110px;
+				border-radius: 50%;
+				object-fit: cover;
+				border: 2px solid rgba(255, 255, 255, 0.25);
+			}
+			.intro-bio h3 {
+				margin: 0 0 0.3rem;
+				font-size: 1.1rem;
+				text-transform: none;
+				letter-spacing: 0;
+			}
+			.intro-tagline {
+				font-size: 0.78rem;
+				opacity: 0.6;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				margin: 0 0 0.7rem;
+			}
+			.intro-bio > p:last-child {
+				font-size: 0.88rem;
+				opacity: 0.85;
+				margin: 0;
+				line-height: 1.6;
+			}
+			.intro-tiles {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 0.75rem;
+				margin-bottom: 1.75rem;
+			}
+			.intro-tile {
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 4px;
+				padding: 1rem 0.75rem;
+				text-align: center;
+			}
+			.intro-tile .icon {
+				font-size: 1.25rem;
+				display: block;
+				margin-bottom: 0.5rem;
+				opacity: 0.7;
+			}
+			.intro-tile h4 {
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				margin: 0 0 0.4rem;
+				opacity: 0.7;
+			}
+			.intro-tile p {
+				font-size: 0.78rem;
+				line-height: 1.5;
+				margin: 0;
+				opacity: 0.85;
+			}
+			.intro-divider {
+				border: none;
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+				margin: 1.5rem 0;
+			}
+			.intro-facts {
+				display: flex;
+				flex-direction: column;
+				gap: 0.65rem;
+				margin-bottom: 1.75rem;
+			}
+			.intro-fact {
+				display: flex;
+				align-items: flex-start;
+				gap: 0.75rem;
+				font-size: 0.85rem;
+				opacity: 0.85;
+				line-height: 1.5;
+			}
+			.intro-fact .icon {
+				flex-shrink: 0;
+				margin-top: 0.1rem;
+				opacity: 0.6;
+				font-size: 0.9rem;
+			}
+			.intro-facts-label {
+				font-size: 0.7rem;
+				text-transform: uppercase;
+				letter-spacing: 0.12rem;
+				opacity: 0.5;
+				margin-bottom: 0.75rem;
+			}
+			@media screen and (max-width: 480px) {
+				.intro-profile { flex-direction: column; text-align: center; }
+				.intro-tiles { grid-template-columns: 1fr; }
+			}
+
+			/* ── Project Cards ── */
 			.project-card {
 				background: rgba(255, 255, 255, 0.05);
 				border: 1px solid rgba(255, 255, 255, 0.1);
@@ -82,9 +188,66 @@
 						<!-- Intro -->
 							<article id="intro">
 								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Hello! Welcome to my portfolio, my name is Angelo Canunayon. I am passionate about using technology and its systems to solve practical problems felt by millions around the globe. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p></p>
+
+								<!-- Profile -->
+								<div class="intro-profile">
+									<div class="intro-avatar">
+										<img src="images/pic01.jpg" alt="Angelo Canunayon" />
+									</div>
+									<div class="intro-bio">
+										<h3>Angelo Canunayon</h3>
+										<p class="intro-tagline">Software Developer &amp;nbsp;&middot;&amp;nbsp; CS Student &amp;nbsp;&middot;&amp;nbsp; AI Enthusiast</p>
+										<p>Passionate about using technology to solve practical problems felt by millions. Currently building projects at the intersection of software, AI, and real-world impact.</p>
+									</div>
+								</div>
+
+								<!-- Info tiles -->
+								<div class="intro-tiles">
+									<div class="intro-tile">
+										<span class="icon solid fa-graduation-cap"></span>
+										<h4>Education</h4>
+										<p>DePaul University<br />B.S. Computer Science<br />Software Development</p>
+									</div>
+									<div class="intro-tile">
+										<span class="icon solid fa-code"></span>
+										<h4>Tech Stack</h4>
+										<p>Python &middot; C++ &middot; JS<br />React &middot; PyGame<br />AI APIs</p>
+									</div>
+									<div class="intro-tile">
+										<span class="icon solid fa-brain"></span>
+										<h4>Interests</h4>
+										<p>AI &amp; Machine Learning<br />Software Optimization<br />Systems Design</p>
+									</div>
+								</div>
+
+								<hr class="intro-divider" />
+
+								<!-- Quick facts -->
+								<p class="intro-facts-label">Quick Facts</p>
+								<div class="intro-facts">
+									<div class="intro-fact">
+										<span class="icon solid fa-trophy"></span>
+										<span>Built an AR navigation app for the Chicago Pedway at a hackathon using A* pathfinding on a 400-node graph.</span>
+									</div>
+									<div class="intro-fact">
+										<span class="icon solid fa-robot"></span>
+										<span>Developed a calorie tracker that estimates meal nutrition from photos with up to 95% accuracy using an AI API.</span>
+									</div>
+									<div class="intro-fact">
+										<span class="icon solid fa-running"></span>
+										<span>Outside of code: boxing, basketball, and reading &mdash; balance keeps the mind sharp.</span>
+									</div>
+									<div class="intro-fact">
+										<span class="icon solid fa-map-marker-alt"></span>
+										<span>Based in Chicago, IL &mdash; always looking for opportunities to build meaningful software.</span>
+									</div>
+								</div>
+
+								<ul class="actions">
+									<li><a href="#work" class="button primary">View My Work</a></li>
+									<li><a href="#contact" class="button">Get In Touch</a></li>
+								</ul>
+
 							</article>
 
 						<!-- Work -->
